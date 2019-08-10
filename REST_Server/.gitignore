@@ -1,0 +1,30 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+spring-log.log*
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.rar
+
+# IDEA project settings
+.idea/
+
+# Files created by IDEA for project modules
+*.iml
+
+# Maven files
+target/
+
+# Default folder for compilation files in IDEA
+out/
+
+# Allure report files
+.allure/
+allure-results
