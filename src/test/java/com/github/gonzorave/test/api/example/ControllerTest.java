@@ -1,13 +1,10 @@
-package springrest;
+package com.github.gonzorave.test.api.example;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 
 public class ControllerTest {
@@ -46,7 +43,12 @@ public class ControllerTest {
 
 //        List<Employee> employees = RestAssured.given().spec(baseSpecification).get("/employees").getBody().jsonPath().getList(".", Employee.class);
         RestAssured.given().spec(baseSpecification).get("/employees")
-                .then().body("$[@id == \"2829\"]", Matchers.equalTo("window cleaner"));
+                .then().body("find {it.id == 2829}", Matchers.allOf(
+                Matchers.hasEntry("title", "window cleaner"),
+                Matchers.hasEntry("name", "Mr. Reanna Hauck")
+        ))
+                .body("find {it.id == 2829}.title", Matchers.equalTo("window cleaner"))
+                .body("find {it.id == 2829}.name", Matchers.equalTo("Mr. Reanna Hauck"));
     }
 
 

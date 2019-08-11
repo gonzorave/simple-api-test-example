@@ -1,4 +1,4 @@
-package springrest;
+package com.github.gonzorave.test.api.example;
 
 import java.io.IOException;
 import java.io.Reader;

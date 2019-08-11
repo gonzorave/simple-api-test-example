@@ -1,4 +1,4 @@
-package springrest;
+package com.github.gonzorave.test.api.example;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class Controller extends Data {
     //Returns current employees list
     @RequestMapping("/employees")
     public ArrayList<Employee> comp() {
-        return Data.getComp();
+        return getComp();
     }
 
     //Adds new employee. Returns the resulting contents of the map with the new data.
